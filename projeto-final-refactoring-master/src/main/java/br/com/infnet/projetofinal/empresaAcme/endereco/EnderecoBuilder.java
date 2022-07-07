@@ -1,6 +1,6 @@
 package br.com.infnet.projetofinal.empresaAcme.endereco;
 
-public static class EnderecoBuilder {
+public class EnderecoBuilder {
     private String logradouro;
     private String cidade;
     private String numero;
@@ -28,8 +28,27 @@ public static class EnderecoBuilder {
         return this;
     }
 
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
     public Endereco build() {
-        Endereco endereco = new Endereco(this);
-        return endereco;
+        return new Endereco(this);
     }
 }

@@ -8,11 +8,11 @@ public class Endereco {
     private final String bairro;
 
     protected Endereco(EnderecoBuilder builder) {
-        this.logradouro = builder.logradouro;
-        this.cidade = builder.cidade;
-        this.numero = builder.numero;
-        this.cep = builder.cep;
-        this.bairro = builder.bairro;
+        this.logradouro = builder.getLogradouro();
+        this.cidade = builder.getCidade();
+        this.numero = builder.getNumero();
+        this.cep = builder.getCep();
+        this.bairro = builder.getBairro();
     }
 
     public String getLogradouro() {

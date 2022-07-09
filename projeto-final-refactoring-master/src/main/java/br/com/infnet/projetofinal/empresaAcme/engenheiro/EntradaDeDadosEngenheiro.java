@@ -1,5 +1,7 @@
 package br.com.infnet.projetofinal.empresaAcme.engenheiro;
 
+import br.com.infnet.projetofinal.empresaAcme.validacao.ValidacaoService;
+
 import java.util.Scanner;
 
 public class EntradaDeDadosEngenheiro {
@@ -27,12 +29,27 @@ public class EntradaDeDadosEngenheiro {
 
             System.out.println("(true)Fluente em ingles    (false)Nao fluente em ingles");
             engenheiro.setFluenteEmIngles(entrada.nextBoolean());
+
+            System.out.println("Digite o tempo de servico em anos");
+            engenheiro.setTempoDeServicoEMAnos(entrada.nextDouble());
         } catch (Exception e) {
             System.out.println("Erro capturado: " + e.getMessage());
-        } finally {
-            entrada.close();
         }
         return engenheiro;
     }
 
+    public void imprimirDados(final DadosEngenheiro entrada) {
+        System.out.println("Tempo de servico em anos: " + entrada.getTempoDeServicoEMAnos());
+        System.out.println("Aprovado: " + entrada.isAprovado());
+    }
+
+    public void startEngenheiro() {
+        EntradaDeDadosEngenheiro engenheiro = new EntradaDeDadosEngenheiro();
+        final DadosEngenheiro entrada = engenheiro.start();
+        if (ValidacaoService.isFluenteEmIngles(entrada)) {
+            ValidacaoService.validaSeTemMestrado(entrada);
+            ValidacaoService.validaSeTemDoutora(entrada);
+        }
+        imprimirDados(entrada);
+    }
 }

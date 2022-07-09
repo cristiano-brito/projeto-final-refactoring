@@ -1,6 +1,8 @@
 package br.com.infnet.projetofinal.empresaAcme.engenheiro;
 
-public class DadosEngenheiro {
+import br.com.infnet.projetofinal.empresaAcme.Funcionario;
+
+public class DadosEngenheiro extends Funcionario {
 
     private boolean temMestrado;
     private Integer notaMestrado;
@@ -64,5 +66,10 @@ public class DadosEngenheiro {
 
     public void setAprovado(boolean aprovado) {
         this.aprovado = aprovado;
+    }
+
+    @Override
+    public Double calculaBonus() {
+        return getTempoDeServicoEMAnos() * 3.7;
     }
 }

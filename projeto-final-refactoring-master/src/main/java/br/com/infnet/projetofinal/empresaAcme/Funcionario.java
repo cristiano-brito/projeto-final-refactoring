@@ -6,11 +6,16 @@ public abstract class Funcionario {
     private String id;
     private String nome;
     private String sobrenome;
-    private Long tempoDeServicoEMAnos;
+    private Double tempoDeServicoEMAnos;
     private Endereco endereco;
     private GrupoSanguineo grupoSanguineo;
+
     public Funcionario(GrupoSanguineo grupoSanguineo) {
         this.grupoSanguineo = grupoSanguineo;
+    }
+
+    public Funcionario() {
+
     }
 
     public String getId() {
@@ -36,11 +41,12 @@ public abstract class Funcionario {
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
     }
-    public Long getTempoDeServicoEMAnos() {
+
+    public Double getTempoDeServicoEMAnos() {
         return tempoDeServicoEMAnos;
     }
 
-    public void setTempoDeServicoEMAnos(Long tempoDeServicoEMAnos) {
+    public void setTempoDeServicoEMAnos(Double tempoDeServicoEMAnos) {
         this.tempoDeServicoEMAnos = tempoDeServicoEMAnos;
     }
 
